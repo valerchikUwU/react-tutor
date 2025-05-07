@@ -1,0 +1,19 @@
+// Цвета фона
+:root {
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    
+  
+    // Цвета текста
+    --text-primary: #212529;
+    --text-secondary: #495057;
+    
+    // Шрифты
+    --font-primary: 'Inter', -apple-system, sans-serif;
+    
+    // Тени
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+
+    --accent-color: #646cff; // Основной цвет полоски
+  }

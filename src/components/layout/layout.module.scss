@@ -1,0 +1,128 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+  transition: background 0.3s ease;
+
+  &.dark {
+    background: #202024e0;
+    color: #fff;
+  }
+
+  &.light {
+    background: #f5f5f5;
+    color: #333;
+  }
+}
+
+.sidebar {
+  width: 50px;
+  background: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  border-right: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+.themeToggle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background: var(--button-bg);
+  color: var(--button-color);
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+.contact {
+  width: 400px;
+  min-width: 0%;
+  max-width: 24%;
+  margin-left: 20px;
+  margin-top: 25px;
+  height: calc(100vh - 25px);
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 8px 0 0 8px;
+  color: var(--contact-color);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.header {
+  height: 32px;
+  min-height: 0%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding: 5px 5px 5px 11px;
+
+  border-radius: 8px 0 0 0;
+  background-color: #005475;
+}
+
+.headerName {
+  font-family: 'Montserrat';
+  font-size: min(22px, max(16px, 3vw)); /* Адаптивно между 16px и 22px */
+  font-weight: 600;
+  color: #fff;
+  line-height: 1; /* Важно для точного соответствия высоте */
+  padding: 0.2em 0; /* Отступы в em для пропорциональности */
+}
+
+.burger {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+
+// CSS-переменные для тем
+:root {
+  --sidebar-bg: #005475;
+  --button-color: white;
+}
+
+.dark {
+  --button-bg: #0984e3;
+  --contact-bg-color: #202024e0;
+}
+
+.light {
+  --button-bg: #74b9ff;
+}
