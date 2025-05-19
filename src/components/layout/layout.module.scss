@@ -16,11 +16,11 @@
 
 .sidebar {
   width: 50px;
+  height: 100vh;
   background: var(--sidebar-bg);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
   border-right: 1px solid var(--border-color);
   transition: all 0.3s ease;
 
@@ -30,6 +30,7 @@
 .themeToggle {
   width: 30px;
   height: 30px;
+  margin-top: 20px;
   border-radius: 50%;
   border: none;
   background: var(--button-bg);
@@ -52,32 +53,32 @@
 }
 
 .main {
-  display: flex;
-  width: 80%;
+  position: relative;
+  overflow: auto;
+  width: 1700px;
+  height: calc(100vh - 30px);
   margin-left: 30px;
   margin-top: 25px;
   margin-right: 25px;
   margin-bottom: 5px;
-
-  border-radius: 0 8px 8px 0;
+  border-radius: 0px 8px 8px 0;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .mainHeader {
   height: 32px;
-  min-height: 0%;
-  max-height: 100%;
-  display: flex;
-  width: 100%;
   overflow: hidden;
   padding: 5px 5px 5px 11px;
-
-  border-radius: 8px 0 0 0;
+  border-radius: 0px 0 0 0;
   background-color: #005475;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .operationalBar {
   width: 400px;
+  height: calc(100vh - 30px);
   min-width: 0%;
   max-width: 24%;
   margin-left: 20px;
@@ -121,13 +122,26 @@
 .headerName {
   font-family: var(--font-primary);
   font-size: min(22px, max(14px, 3vw));
-  /* Адаптивно между 16px и 22px */
   font-weight: 600;
   color: #fff;
   line-height: 1;
-  /* Важно для точного соответствия высоте */
   padding: 0.2em 0;
-  /* Отступы в em для пропорциональности */
+}
+
+.dropdown {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border-color: #333;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  transition: all 0.1s ease;
+  margin-left: 25px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .burger {
@@ -149,21 +163,21 @@
   max-height: 300px;
   overflow-y: auto;
   padding: 8px 0;
-  background: var(--bg-secondary);
 }
 
 .organizationItem {
   padding: 8px 16px;
   cursor: pointer;
-  background-color: var(--bg-list-item);
   transition: background 0.2s;
-  
+
   &:hover {
     background: var(--hover-item)
   }
 }
 
-.loading, .error, .empty {
+.loading,
+.error,
+.empty {
   padding: 16px;
   text-align: center;
   color: var(--text-secondary);
@@ -171,7 +185,7 @@
 
 .collapseIcon {
   transition: transform 0.3s ease;
-  
+
   &.collapsed {
     transform: rotate(-90deg);
   }
@@ -180,25 +194,139 @@
 .organizationList {
   max-height: 300px;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  
+
+
+  transition: all 1.0s ease;
+
   &.collapsed {
     max-height: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
     opacity: 0;
   }
 }
+
+
+.startMessageBlock {
+  margin: 50px 200px 0px 30px;
+  padding: 50px 500px 50px 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+
+.mainIconInChat {
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: start;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.staticMessage {
+  position: absolute;
+  margin-left: 30px;
+  width: 400px;
+  height: 40px;
+  border-radius: 8px 8px 8px 0;
+  background-color: #cfdee5;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.staticMessageText {
+  font-family: var(--font-primary);
+  font-size: min(22px, max(14px, 3vw));
+  font-weight: 600;
+  color: #005475;
+}
+
+.modules {
+  position: relative;
+  flex-direction: column;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+
+
+.module {
+  display: flex;
+  width: fit-content;
+  height: var(--module-height);
+  margin-top: var(--module-margin-top);
+  margin-left: var(--module-margin-left);
+  border-radius: var(--border-radius-module);
+  background-color: var(--background-color-module);
+  box-shadow: var(--box-shadow-module);
+  cursor: pointer;
+  align-items: center;
+  justify-content: left;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #cfdee5;
+
+    .moduleText {
+      color: var(--background-color-module);
+    }
+
+    .moduleImage svg path {
+      fill: var(--background-color-module)
+    }
+
+    .moduleImage svg path:not([fill]) {
+      stroke: white !important;
+    }
+  }
+}
+
+
+.moduleText {
+  font-family: var(--font-primary);
+  font-size: min(22px, max(14px, 3vw));
+  font-weight: 600;
+  color: #fff;
+  line-height: 1;
+  margin-left: 15px;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.moduleImage {
+  display: flex;
+  position: relative;
+  margin-left: 15px;
+
+  svg path {
+    transition: fill 0.3s ease;
+  }
+}
+
 // CSS-переменные для тем
 :root {
   --sidebar-bg: #005475;
   --button-color: white;
+  --module-width: 150px;
+  --module-height: 60px;
+  --module-margin-top: 30px;
+  --module-margin-left: 30px;
+  --border-radius-module: 0px 8px 8px 0px;
+  --background-color-module: #005475;
+  --box-shadow-module: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .dark {
-  --bg-secondary: #202024e0;
+  --bg-dark-primary: #202024e0;
   --button-bg: #74b9ff;
   --bg-list-item: #202024e0;
   --contact-bg-color: #202024e0;

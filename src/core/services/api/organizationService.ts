@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Organization } from '../../types/organization';
 
 const API_BASE_URL = process.env.API_BASE_URL;
 const config = {
@@ -19,19 +20,3 @@ export const OrganizationService = {
   }
 };
 
-export type Organization = {
-    id: string;
-  
-    organizationName: string;
-  
-    parentOrganizationId: string;
-  
-    colorCodes: Record<string, string>;
-  
-    organizationColor: string;
-  
-    createdAt: Date;
-  
-    updatedAt: Date;
-  
-}
