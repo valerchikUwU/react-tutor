@@ -1,0 +1,38 @@
+
+.main {
+  position: relative;
+  overflow: auto;
+  width: 1700px;
+  height: calc(100vh - 30px);
+  margin-left: 30px;
+  margin-top: 25px;
+  margin-right: 25px;
+  margin-bottom: 5px;
+  border-radius: 0px 8px 8px 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+
+.mainHeader {
+  height: 32px;
+  overflow: hidden;
+  padding: 5px 5px 5px 11px;
+  background-color: #005475;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+
+.headerName {
+  font-family: var(--font-primary);
+  font-size: min(22px, max(14px, 3vw));
+  font-weight: 600;
+  color: #fff;
+  line-height: 1;
+  padding: 0.2em 0;
+  display: flex;
+}
+

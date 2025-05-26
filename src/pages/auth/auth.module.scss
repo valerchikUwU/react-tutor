@@ -1,0 +1,52 @@
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    background-color: #005475;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foreground {
+    width: 95vw;
+    height: 91vh;
+    background-color: var(--background);
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 8px 0px 0px 0px;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.themeToggle {
+    width: 3%;
+    height: 6%;
+    border-radius: 50%;
+    border: none;
+    background: var(--button-bg);
+    color: var(--button-color);
+    cursor: pointer;
+    font-size: 1.7vw;
+    display: flex;
+    position: absolute;
+    left: 1%;
+    top: 14.5%;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+  
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+  
+    &:active {
+      transform: scale(0.95);
+    }
+    z-index: 1000;
+  }

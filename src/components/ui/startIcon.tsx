@@ -5,6 +5,6 @@ export const StarIcon = () => (
             Created with Pixso.
         </desc>
         <defs />
-        <path id="Vector" d="M10 15.27L16.18 19L14.54 11.97L20 7.23L12.81 6.62L10 0L7.19 6.62L0 7.23L5.45 11.97L3.82 19L10 15.27Z" fill="#ffff" fill-opacity="1.000000" fill-rule="nonzero" />
+        <path id="Vector" d="M10 15.27L16.18 19L14.54 11.97L20 7.23L12.81 6.62L10 0L7.19 6.62L0 7.23L5.45 11.97L3.82 19L10 15.27Z" fill="#ffff" fillOpacity="1.000000" fillRule="nonzero" />
     </svg>
 );

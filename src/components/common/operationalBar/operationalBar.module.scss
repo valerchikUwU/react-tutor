@@ -1,0 +1,205 @@
+.operationalBar {
+  width: 400px;
+  height: calc(100vh - 30px);
+  min-width: 0%;
+  max-width: 24%;
+  margin-left: 20px;
+  margin-top: 25px;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 8px 0 0 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.organizationsHeader {
+  height: 32px;
+  min-height: 0%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 5px 5px 5px 11px;
+
+  border-radius: 8px 0 0 0;
+  background-color: #005475;
+}
+
+.contactsHeader {
+  height: 32px;
+  min-height: 0%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 5px 5px 11px;
+
+  border-radius: 8px 0 0 0;
+  background-color: #005475;
+}
+
+.headerName {
+  font-family: var(--font-primary);
+  font-size: min(22px, max(14px, 3vw));
+  font-weight: 600;
+  color: #fff;
+  line-height: 1;
+  padding: 0.2em 0;
+}
+
+.dropdown {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border-color: #333;
+  cursor: pointer;
+  display: flex;
+  transition: all 0.1s ease;
+  margin-left: auto;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.burger {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.organizationList {
+  max-height: 300px;
+  overflow: auto;
+  display: inline-block;
+  padding: 8px 0;
+}
+
+.organizationItem {
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: 600;
+  color: gray;
+  text-align: left;
+  &:hover {
+    background: var(--hover-item);
+
+    .organizationName {
+      transition: color 0.3s;
+      color: var(--hover-organization-itemBar-color);
+    }
+
+    .organizationIcon {
+      svg {
+        transition: all 0.3s;
+        fill: var(--hover-organization-itemBar-color);
+      }
+    }
+
+  }
+}
+
+.selected {
+
+  background: var(--hover-item);
+  .organizationName {
+    transition: color 0.3s;
+    color: var(--hover-organization-itemBar-color);
+  }
+
+  .organizationIcon {
+    svg {
+      transition: all 0.3s;
+      fill: var(--hover-organization-itemBar-color);
+    }
+  }
+}
+
+.organizationName {
+  transform: translate(5px, -5px);
+  display: inline-block;
+}
+
+.organizationIcon {
+  display: inline-block;
+  svg {
+    fill: gray
+  }
+}
+
+.loading {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: relative;
+  display: block;
+  margin: 100px auto;
+  box-sizing: border-box;
+  justify-content: center;
+  animation: rotation 1.5s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+.loadingSpan {
+  color: #005475;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  position: relative;
+  bottom: calc(50% - 40px);
+  left: calc(50% - 38px);
+}
+
+
+.error,
+.empty {
+  padding: 16px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.collapseIcon {
+  transition: transform 0.3s ease;
+
+  &.collapsed {
+    transform: rotate(-90deg);
+  }
+}
+
+.organizationList {
+  max-height: 300px;
+  overflow: hidden;
+
+
+  transition: all 1.0s ease;
+
+  &.collapsed {
+    max-height: 0;
+    opacity: 0;
+  }
+}

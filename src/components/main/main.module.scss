@@ -1,0 +1,138 @@
+@import '../../styles/common.scss';
+
+
+
+
+.startMessageBlock {
+  margin: 50px 200px 0px 30px;
+  padding: 50px 500px 50px 50px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+
+.mainIconInChat {
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: start;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.staticMessage {
+  position: absolute;
+  margin-left: 30px;
+  width: 400px;
+  height: 40px;
+  border-radius: 8px 8px 8px 0;
+  background-color: #cfdee5;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.staticMessageText {
+  font-family: var(--font-primary);
+  font-size: min(22px, max(14px, 3vw));
+  font-weight: 600;
+  color: #005475;
+}
+
+.modules {
+  position: relative;
+  flex-direction: column;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+
+
+.module {
+  display: flex;
+  width: fit-content;
+  height: var(--module-height);
+  margin-top: var(--module-margin-top);
+  margin-left: var(--module-margin-left);
+  border-radius: var(--border-radius-module);
+  background-color: var(--background-color-module);
+  box-shadow: var(--box-shadow-module);
+  cursor: pointer;
+  align-items: center;
+  justify-content: left;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #cfdee5;
+
+    .moduleText {
+      color: var(--background-color-module);
+    }
+
+    .moduleImage svg path {
+      fill: var(--background-color-module)
+    }
+
+    .specialModule svg path:not([fill]) {
+      stroke: white !important;
+    }
+  }
+}
+
+
+.moduleText {
+  font-family: var(--font-primary);
+  font-size: min(22px, max(14px, 3vw));
+  font-weight: 600;
+  color: #fff;
+  line-height: 1;
+  margin-left: 15px;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.moduleImage {
+  display: flex;
+  position: relative;
+  margin-left: 15px;
+
+  svg path {
+    transition: fill 0.3s ease;
+  }
+}
+
+// CSS-переменные для тем
+:root {
+  --sidebar-bg: #005475;
+  --button-color: white;
+  --module-width: 150px;
+  --module-height: 60px;
+  --module-margin-top: 30px;
+  --module-margin-left: 30px;
+  --border-radius-module: 0px 8px 8px 0px;
+  --background-color-module: #005475;
+  --box-shadow-module: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.dark {
+  --bg-dark-primary: #202024e0;
+  --button-bg: #74b9ff;
+  --bg-list-item: #202024e0;
+  --contact-bg-color: #202024e0;
+  --hover-item: #005475;
+}
+
+.light {
+  --bg-list-item: #f5f5f5;
+  --button-bg: #0984e3;
+  --hover-item: #cfdee5;
+}

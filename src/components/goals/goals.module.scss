@@ -1,0 +1,80 @@
+@import '../../styles/common.scss';
+
+
+.headerIcon {
+    display: flex;
+    width: 30px;
+}
+
+.secondHeader {
+    height: 132px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    overflow: hidden;
+    border-radius: 8px 8px 8px 8px;
+    background-color: #918c8c71;
+    position: sticky;
+    opacity: 30%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.goalTextInputBlock {
+    height: 400px;
+    margin-top: 80px;
+    margin-left: 100px;
+    margin-right: 100px;
+    overflow: visible;
+    border-radius: 8px 8px 8px 8px;
+    background-color: rgba(177, 177, 177, 0.171);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    justify-content: center;
+}
+
+
+.goalTextInput {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+    border: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: min(22px, max(14px, 3vw));
+    transition: all 0.3s;
+
+    &:hover {
+        border-radius: 8px;
+        box-shadow:0px 0px 15px 2px #005475;
+    }
+
+    &:focus {
+
+        border-radius: 8px;
+        box-shadow:0px 0px 15px 2px #005475;
+    }
+}
+
+
+.iconBackward {
+    display: flex;
+    float: right;
+    margin-left: auto;
+    margin-right: 0;
+    cursor: pointer;
+    transition: all 0.1s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
