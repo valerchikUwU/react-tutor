@@ -6,9 +6,9 @@ export const OrganizationService = {
         try {
             const response = await axiosSecure.get('/organizations');
             return response.data
-        } catch (error) {
-            console.error('Error fetching organizations:', error)
-            throw error
+        } catch (err) {
+            console.error('Error fetching organizations:', err)
+            throw err
         }
     }
 }

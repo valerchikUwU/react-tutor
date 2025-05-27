@@ -1,6 +1,6 @@
 import { OperationalBar } from '../../components/common/operationalBar/operationalBar'
 import { Sidebar } from '../../components/common/sideBar/sidebar'
-import { Goals } from '../../components/goals/goals'
+import { Goals } from '../../components/goal/goal'
 import styles from './goals.module.scss'
 
 

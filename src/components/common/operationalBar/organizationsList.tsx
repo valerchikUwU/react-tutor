@@ -5,14 +5,10 @@ import mainIcon from '../../../assets/images/iconHeader.svg';
 import { OrganizationIcon } from '../../ui/organizationIcon';
 import { organizationStore } from '../../../stores/organization.store';
 import { observer } from 'mobx-react-lite';
+import { OrganizationListProps } from '../../../types/organizationList';
 
 
-type OrganizationListProps = {
-  organizations: Organization[];
-  loading: boolean;
-  error: string | null;
-  isCollapsed?: boolean;
-}
+
 
 export const OrganizationList: React.FC<OrganizationListProps> = observer(({
   organizations,
@@ -35,7 +31,7 @@ export const OrganizationList: React.FC<OrganizationListProps> = observer(({
   const handleSelectOrg = (org: Organization) => {
     setSelectedOrgId(org.id);
     localStorage.setItem('orgId', org.id);
-    organizationStore.setSelectedOrganization(org.id)
+    organizationStore.setSelectedOrganization(org.id);
   };
 
   return (

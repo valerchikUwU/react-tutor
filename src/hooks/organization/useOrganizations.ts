@@ -7,7 +7,7 @@ export const useOrganizations = () => {
   const [organizations, setOrganizations] = useState<Organization[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const axiosSecure = useAxiosSecure()
+  const axiosSecure = useAxiosSecure();
 
   useEffect(() => {
     const fetchOrganizations = async () => {

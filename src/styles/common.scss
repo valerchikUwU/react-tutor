@@ -1,8 +1,7 @@
-
 .main {
   position: relative;
   overflow: auto;
-  width: 1700px;
+  width: 100%;
   height: calc(100vh - 30px);
   margin-left: 30px;
   margin-top: 25px;
@@ -36,3 +35,67 @@
   display: flex;
 }
 
+
+
+.loading {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  position: relative;
+  display: block;
+  margin: 100px auto;
+  box-sizing: border-box;
+  justify-content: center;
+  animation: rotation 1.5s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loadingSpan {
+  color: #005475;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  position: relative;
+  bottom: calc(50% - 40px);
+  left: calc(50% - 38px);
+}
+
+
+.error,
+.empty {
+  padding: 16px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+
+.iconBackward {
+  display: flex;
+  float: right;
+  margin-left: auto;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

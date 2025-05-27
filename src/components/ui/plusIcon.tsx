@@ -1,0 +1,3 @@
+export const PlusIcon = () => (
+    <svg width="19.998047" height="20.000000" viewBox="0 0 19.998 20" fill="none"><defs></defs><path id="Vector" d="M10 20C4.47 19.99 0 15.52 0 10L0 9.8C0.1 4.3 4.63 -0.08 10.13 0C15.62 0.07 20.03 4.56 19.99 10.06C19.96 15.56 15.49 19.99 10 20ZM5 9L5 11L9 11L9 15L11 15L11 11L15 11L15 9L11 9L11 5L9 5L9 9L5 9Z" fill="#B4B4B4" fillOpacity="1.000000" fillRule="nonzero"></path></svg>
+)

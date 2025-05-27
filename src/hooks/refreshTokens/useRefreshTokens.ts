@@ -8,12 +8,11 @@ export const useRefreshToken = (fingerprint: string | null) => {
     const refresh = async () => {
         setLoading(true);
         try {
-            if (fingerprint === null) {
+            if (fingerprint == null) {
                 window.location.href = '/'
                 throw Error('No fingerprint in storage')
             }
-            const data = await RefreshTokensService.refreshTokens(fingerprint)
-            //Change current state of user
+            const data = await RefreshTokensService.refreshTokens(fingerprint);
             localStorage.setItem('accessToken', data)
             return data
         }
