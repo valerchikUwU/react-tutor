@@ -16,7 +16,6 @@ export const OrganizationList: React.FC<OrganizationListProps> = observer(({
   error,
   isCollapsed = false,
 }: OrganizationListProps) => {
-
   const [selectedOrgId, setSelectedOrgId] = useState<string | null>(localStorage.getItem('orgId'));
   useEffect(() => {
     if (organizations.length > 0 && !selectedOrgId) {

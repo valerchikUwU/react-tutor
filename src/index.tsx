@@ -4,17 +4,20 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { App } from './App';
-import './styles/global.scss'; // Подключи глобальные стили
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import './styles/global.scss';
 
 
-
+const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-    <BrowserRouter>
+  <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
       <App />
-    </BrowserRouter>
+    </QueryClientProvider>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

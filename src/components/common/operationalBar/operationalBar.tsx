@@ -6,9 +6,8 @@ import { useOrganizations } from '../../../hooks/organization/useOrganizations';
 import { OrganizationList } from './organizationsList';
 
 export const OperationalBar: React.FC = () => {
-    const { organizations, loading, error } = useOrganizations();
+    const { data: organizations, isLoading, error } = useOrganizations();
     const [isOrganizationsClosed, setOrganizationsClosed] = useState(false);
-
     return (
 
         <div className={styles.operationalBar}>
@@ -30,8 +29,8 @@ export const OperationalBar: React.FC = () => {
             </div>
             <OrganizationList
                 isCollapsed={isOrganizationsClosed}
-                organizations={organizations}
-                loading={loading}
+                organizations={organizations ?? []}
+                loading={isLoading}
                 error={error}
             />
             <div className={styles.contactsHeader}>
