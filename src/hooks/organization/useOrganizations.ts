@@ -10,7 +10,7 @@ export const useOrganizations = () => {
   return useQuery<Organization[], Error>({
     queryKey: ['organizations'],
     queryFn: () => OrganizationService.getOrganizations(axiosSecure),
-    refetchOnWindowFocus: false, // Не обновлять при фокусе окна
-    retry: 1, // Количество попыток при ошибке
+    refetchOnWindowFocus: false,
+    retry: 1,
   });
 };

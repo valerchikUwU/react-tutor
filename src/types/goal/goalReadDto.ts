@@ -1,6 +1,6 @@
-import { Organization } from "./organization";
+import { Organization } from "../organization";
 
-export type Goal = {
+export type GoalReadDto = {
     id: string;
     content: string[];
     createdAt: Date;
